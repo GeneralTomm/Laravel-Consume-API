@@ -135,7 +135,7 @@
     xhr.open('GET','/fetch',true);
     xhr.onreadystatechange = function(){
         if(xhr.readyState == 4 && xhr.status == 200){
-            console.log(JSON.parse(xhr.responseText));
+            console.table(JSON.parse(xhr.responseText));
         }
     }
     xhr.send();
