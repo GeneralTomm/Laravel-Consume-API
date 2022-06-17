@@ -13,12 +13,11 @@ class ApiController extends Controller
     }
     public function fetch(){
         $obj = collect($this->api);
-        $result = $obj->filter(function($value,$key){
-            return $value->userId == 1 && $value->completed == true;
-        });
+        $result = $obj->filter(fn($value, $key)=> $value->userId == 1 && $value->completed == true);
         return $result;
     }
     public function show(){
-        
+        $collection = collect($this->api);
+
     }
 }
