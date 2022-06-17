@@ -12,5 +12,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/fetch','ApiController@fetch');
+Route::controller('ApiController')->group(function(){
+    Route::get('/fetch', 'fetch');
+    Route::get('/show/{id}','show');
+    Route::get('/search/{key}','search');
+});
 Route::view('/','welcome');
